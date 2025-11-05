@@ -1,0 +1,100 @@
+package cellulare;
+
+import java.util.*;             //libreria
+
+public class Cellulare {        //attributi
+
+    private String marca;
+    private String modello;
+    private double prezzo;
+    private int annoProduzione;
+
+    //Metodi Costruttori
+    public Cellulare() {
+    }
+
+    public Cellulare(String marca, String modello, double prezzo, int annoProduzione) {
+        this.marca = marca;
+        this.modello = modello;
+        this.prezzo = prezzo;
+        this.annoProduzione = annoProduzione;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModello(String modello) {
+        this.modello = modello;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public void setAnnoProduzione(int annoProduzione) {
+        this.annoProduzione = annoProduzione;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModello() {
+        return modello;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public int getAnnoProduzione() {
+        return annoProduzione;
+    }
+
+    public void Stampa() {
+        System.out.println("-marca \t " + this.marca + "\n-modello \t" + this.modello + "\n-prezzo \t" + this.prezzo + "\n-anno produzione \t" + this.annoProduzione);
+    }
+
+    public void Usato(int anno) {
+        this.annoProduzione=annoProduzione;
+        if (anno == this.annoProduzione) {
+            System.out.println("l'anno di produzione inserito e' giusto");
+        } else {
+            System.out.println("l'anno di produzione inserito e' errato");
+        }
+    }
+
+    public void Fascia() {
+        this.prezzo=prezzo;
+        if (prezzo > 550) {
+            System.out.println("fascia di prezzo alto");
+        } else {
+            System.out.println("fascia di prezzo basso");
+        }
+    }
+
+    public static void main(String[] args) {
+        Cellulare cel1 = new Cellulare("Huawawei", "T9", 123.23, 2019);
+        cel1.Usato(2018);
+        cel1.Fascia();
+        cel1.Stampa();
+
+        System.out.println("\n\n");
+        Cellulare cel2 = new Cellulare();
+        cel2.setMarca("Samsung");
+        cel2.setModello("S23");
+        cel2.setPrezzo(1002.32);
+        cel2.setAnnoProduzione(2012);
+        cel2.getMarca();
+        cel2.getModello();
+        cel2.getPrezzo();
+        cel2.getAnnoProduzione();
+
+        cel2.Stampa();
+        cel2.Fascia();
+        cel2.Usato(2012);
+    }
+}
+
+
